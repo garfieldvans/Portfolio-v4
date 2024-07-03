@@ -1,0 +1,103 @@
+/* Dalam file CSS atau tambahkan style di atas komponen */
+.slick-prev, .slick-next {
+    z-index: 1; /* Pastikan tombol di atas slider */
+    width: 30px; /* Atur lebar tombol */
+    height: 30px; /* Atur tinggi tombol */
+    background-color: rgba(0, 0, 0, 0.5); /* Warna latar belakang dengan transparansi */
+    border-radius: 50%; /* Membuat tombol bulat */
+  }
+  
+  .slick-prev {
+    left: 10px; /* Jarak dari kiri parent */
+  }
+  
+  .slick-next {
+    right: 10px; /* Jarak dari kanan parent */
+  }
+
+  /* Dalam file slider.css */
+.slide-content {
+    height: 100vh; /* Atur tinggi konten slide sesuai viewport */
+    overflow-y: auto; /* Tambahkan scrollbar vertikal jika konten melebihi tinggi */
+  }
+
+  .slide-content::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  
+  .slide-content {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .tabs .tab-button {
+    /* position: relative; */
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0 10px;
+    padding: 10px 20px;
+    outline: none;
+  }
+  
+  .tabs .tab-button::after {
+    content: '';
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    /* background-color: rgb(224, 75, 75); */
+    transition: width 0.3s ease-in-out, right 0.3s ease-in-out;
+  }
+  
+  .tabs .tab-button.active::after {
+    width: 100%;
+    right: 0;
+  }
+
+
+  .custom-arrow {
+    width: 15%;
+    height: 40%;
+    background-color: transparent;
+    /* border: 5px solid #52525291; */
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 460px){
+    .custom-arrow {
+        width: 20%;
+    }
+  }
+  
+  .next-arrow {
+    border-left: none;
+    /* border-top-right-radius: 0;
+    border-bottom-right-radius: 0; */
+    right: -9%; 
+  }
+  
+  .prev-arrow {
+    border-right: none;
+    /* border-top-left-radius: 0;
+    border-bottom-left-radius: 0; */
+    left: -9%;
+  }
+  
+  .slick-prev:before, .slick-next:before {
+    display: none; /* Hide default icons */
+  }
+
+  
