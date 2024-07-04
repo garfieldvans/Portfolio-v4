@@ -42,7 +42,7 @@ const Hero = () => {
     };
   }, []);
   return (
-    <div className=" flex lg:px-44 sm:px-10 px-4 text-white pb-1 ">
+    <div className=" flex lg:px-44 sm:px-10 px-4 text-white pb-20 sm:pb-1 ">
       <div className="flex sm:justify-center lg:justify-between sm:gap-6 md:gap-20 items-center w-full sm:flex-row flex-col">
         <div className=" flex sm:block flex-col">
           <div className="animate-flip-down animate-duration-700">
