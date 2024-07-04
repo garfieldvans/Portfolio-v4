@@ -128,7 +128,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="flex sm:hidden bg-black py-4 ">
+        <div className="flex sm:hidden py-4 ">
         <button
               onClick={() => handleTabClick(0)}
               className={` ${styles.tabButton} ${
