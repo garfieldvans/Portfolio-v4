@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
 import Hero from "../pages/Hero/Hero";
 import Education from "../pages/Education/Education";
 import Work from "../pages/Work/Work";
-import Portfolio from "../pages/Contact/Portfolio";
+import Portfolio from "../pages/Projects/Portfolio";
 // import "./slider.css";
 
 const Routing = () => {

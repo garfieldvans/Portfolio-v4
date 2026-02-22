@@ -1,0 +1,102 @@
+.basic-footer {
+    background-color: #1c1f28;
+    display: flex;
+    width: 100%;
+}
+
+.footer-section {
+    color: #fff;
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+    padding: 40px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.footer-greatings {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footer-quote {
+    font-size: 28px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.mail-to {
+    display: flex;
+    gap: 4px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.mail-to a:hover {
+    color: #ef7ea9;
+}
+
+.mail-to a {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.download-cv {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.download-text {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+a.download {
+    display: flex;
+    gap: 10px;
+    padding: 4px 12px;
+    border: 0;
+    border-radius: 4px;
+    background-color: #320b7a;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    display: flex;
+    width: 100%;
+    margin: 40px 10px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me .dom {
+    display: flex;
+    gap: 4px;
+    font-size: 14px;
+    align-items: center;
+}
+.about-me {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+.other-info {
+    font-size: 20px;
+    font-weight: 600;
+}
