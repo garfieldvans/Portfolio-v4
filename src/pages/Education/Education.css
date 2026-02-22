@@ -1,0 +1,80 @@
+/* profile */
+
+.profile-container {
+    display: flex;
+    gap: 60px;
+    width: 100%;
+}
+
+.box3dContainer {
+    width: 100%;
+    max-width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.box3d {
+    transition: transform 0.5s ease-out;
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+
+.profileForm {
+    /* background-image: url('../../../public/bgimage.png'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profileForm {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 9999px;
+    /* Make it fully rounded */
+}
+
+.profileForm img {
+    height: 100%;
+    width: auto;
+    /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.section-header-title {
+    display: inline-block;
+    text-wrap: nowrap;
+}
+
+.section-header{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile-container {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+}
+
+.profile-summary {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.summary-container {
+    display: flex;
+    width: 100%;
+}
+.summary-desc {
+    display: flex;
+    font-size: 1.1rem;
+
+}

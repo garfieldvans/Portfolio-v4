@@ -11,17 +11,16 @@ const TabMenu = () => {
       className={`sm:justify-center gap-4 backdrop-blur-sm bg-gray-950/75 p-1 fixed bottom-0 left-0 right-0 ${styles.tabs}`}
     >
       {menus.map((menu, i) => (
-        <div
-          key={i}
-          className={`${styles.tabButton} ${
-            activeTab === i ? `${styles.tabButtonActive} font-bold` : ""
-          } hidden text-lg sm:gap-10 sm:flex `}
-          onClick={() => setActiveTab(i)}
-        >
-          <Link to={menu.link}>
+        <Link to={menu.link}>
+          <div
+            key={i}
+            className={`${styles.tabButton} ${activeTab === i ? `${styles.tabButtonActive} font-bold` : ""
+              } hidden text-lg sm:gap-10 sm:flex `}
+            onClick={() => setActiveTab(i)}
+          >
             <h1>{menu.title}</h1>
-          </Link>
-        </div>
+          </div>
+        </Link>
       ))}
 
       <div className="flex sm:hidden gap-2 pt-2">

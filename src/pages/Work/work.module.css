@@ -1,0 +1,28 @@
+
+.wrapper-square {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: .5rem;
+}
+
+.square-header {
+    display: flex;
+    width: fit-content;
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.detail-list {
+    display: flex;
+    width: 100%;
+}
+
+.square-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 14px;
+}
