@@ -1,3 +1,6 @@
+import tailwindcssAnimated from 'tailwindcss-animated';
+import tailwindScrollbar from 'tailwind-scrollbar';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -7,7 +10,21 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
+        sans: ['"Inter Variable"', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['"Space Grotesk Variable"', '"Space Grotesk"', 'system-ui', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+      },
+      colors: {
+        ink: '#0A0A0A',
+        surface: '#111111',
+        elevated: '#161616',
+        line: 'rgba(255,255,255,0.09)',
+        cream: '#F4F4F0',
+        muted: '#9C9C98',
+        accent: '#C8FF4D',
+      },
+      letterSpacing: {
+        tightest: '-0.04em',
       },
       keyframes: {
         'rotate-90-cw': {
@@ -26,7 +43,7 @@ export default {
     },
   },
   plugins: [
-    require('tailwindcss-animated'),
-    require('tailwind-scrollbar'),
+    tailwindcssAnimated,
+    tailwindScrollbar,
   ],
 }

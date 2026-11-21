@@ -1,6 +1,7 @@
-import { FaGithub, FaInstagramSquare } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaGolang } from "react-icons/fa6";
 import { IoIosMail, IoLogoWhatsapp } from "react-icons/io";
-import { SiBootstrap, SiCss3, SiExpress, SiFigma, SiGit, SiHtml5, SiJavascript, SiMongodb, SiMui, SiMysql, SiNextdotjs, SiNodedotjs, SiPhp, SiPostgresql, SiPostman, SiReact, SiSass, SiTailwindcss, SiVercel, SiVisualstudiocode, SiVsco, SiVuedotjs, SiWindows10 } from "react-icons/si";
+import { SiApachekafka, SiBootstrap, SiCss3, SiExpress, SiFastify, SiFigma, SiGit, SiGo, SiHtml5, SiJavascript, SiJest, SiMongodb, SiMui, SiMysql, SiNestjs, SiNextdotjs, SiNodedotjs, SiPhp, SiPostgresql, SiPostman, SiReact, SiRedis, SiSass, SiShopify, SiTailwindcss, SiVisualstudiocode, SiVuedotjs, SiWindows10 } from "react-icons/si";
 
 export const menus = [
     {
@@ -46,6 +47,11 @@ export const lang = [
         icon: SiPhp,
         color: "#AEB2D5"
     },
+    {
+        name: "Go",
+        icon: FaGolang,
+        color: "#00ADD8"
+    }
 ]
 
 export const framework = [
@@ -60,8 +66,23 @@ export const framework = [
         color: "#fff"
     },
     {
+        name: "React Native",
+        icon: SiReact,
+        color: "#61dafb"
+    },
+    {
         name: "Express Js",
         icon: SiExpress,
+        color: "#fff"
+    },
+    {
+        name: "Nest Js",
+        icon: SiNestjs,
+        color: "#e0234e"
+    },
+    {
+        name: "Fastify",
+        icon: SiFastify,
         color: "#fff"
     },
     {
@@ -133,17 +154,52 @@ export const tools = [
         color: "#589636"
     },
     {
+        name: 'Shopify',
+        icon: SiShopify,
+        color: "#95bf47"
+    },
+    {
+        name: 'Jest',
+        icon: SiJest,
+        color: "#99425b"
+    },
+    {
         name: 'PostgreSql',
         icon: SiPostgresql,
         color: "#0064a5"
     },
+    {
+        name: 'Kafka',
+        icon: SiApachekafka,
+        color: "#f0f0f0"
+    },
+    {
+        name: 'Redis',
+        icon: SiRedis,
+        color: "#a41e11"
+    }
 ]
 
 export const workExp = [
     {
-        place: "TOP4 Marketing x The Blue Space",
+        place: "PT Adira Dinamika Multi Finance Tbk",
+        tenure: "May 2024 - Present",
+        role: "Fullstack Developer",
+        stack: ["React Js", "Vite", "Fastify", "REST API", "Postgres", "Jest", "Node Js", "React Native", "Tailwind CSS", "Git"],
+        detail: [
+            "Develop and maintain applications according to requirements, designs, and coding standards.",
+            "Write clean, readable, maintainable, secure, and testable code.",
+            "Perform code reviews and fix defects identified through testing and production monitoring.",
+            "Develop APIs, services, database integrations, or user interfaces according to product needs.",
+            "Write unit tests and support integration and regression testing.",
+            "Debug, troubleshoot, and perform root cause analysis for application issues."
+        ],
+    },
+    {
+        place: "PT Top Four Asia Indonesia x The Blue Space Australia",
         tenure: "Jul 2024 - Feb 2026",
         role: "Fullstack Developer",
+        stack: ["Javascript", "Node Js", "Shopify", "Bootstrap CSS", "Express Js", "Jest", "Vue Js", "Git"],
         detail: [
             "Led UI and layout restructuring using modern responsive design standards, resulting in a more intuitive and usercentric browsing experience.",
             "Implemented SEO-optimized website structure and semantic markup to increase search engine discoverability and improve search insights.",
@@ -155,7 +211,8 @@ export const workExp = [
     {
         place: "PT ASI Pudjiastuti Aviation (Susi Air)",
         tenure: "Oct 2023 - May 2024",
-        role: "Fullstack Developer",
+        role: "Fullstack Javascript Developer",
+        stack: ["Vue Js", "Nuxt Js", "Nest Js", "Tailwind CSS", "SCSS", "MongoDB", "Git"],
         detail:
             [
                 "Diagnosed and resolved frontend and backend issues to maintain website stability and improve overall system reliability.",
@@ -180,6 +237,21 @@ export const workExp = [
 
 ];
 
+export const education = [
+    {
+        place: "CodeMasters Bootcamp Program",
+        tenure: "Sep 2023 - Dec 2023",
+        role: "Fullstack Development",
+        detail: "Studied frontend mobile development with React Native, backend development with Node Js and Express Js, and deepened website development using React Js. Built a React Native mobile application as a team final project.",
+    },
+    {
+        place: "Universitas Teknologi Yogyakarta",
+        tenure: "Sep 2017 - Oct 2022",
+        role: "Information System",
+        detail: "Learned system workflows and how to develop information systems with a clear structure that can be implemented in business, including website development using HTML, Javascript, CSS, PHP, and MySQL.",
+    },
+];
+
 export const contact = [
     {
         name: "GitHub",
@@ -189,17 +261,12 @@ export const contact = [
     {
         name: "Email",
         icon: IoIosMail,
-        link: "mailto: bastianhaloho12@gmail.com",
+        link: "mailto:bastianhalo19@gmail.com",
     },
     {
         name: "Whatsapp",
         icon: IoLogoWhatsapp,
         link: "https://wa.me/+6288228655310",
-    },
-    {
-        name: "IG",
-        icon: FaInstagramSquare,
-        link: "#",
     },
 ];
 
@@ -208,30 +275,35 @@ export const projects = [
         name: "The Blue Space, Online Renovation Retailer",
         desc: "A scalable renovation retail e-commerce solution built on Shopify, enhanced with JavaScript, and optimized with a fully responsive design to deliver a smooth and engaging user experience on all devices.",
         url: "https://www.thebluespace.com.au/",
-        img: "./tbs.png"
+        img: "./tbs.png",
+        tags: ["Shopify", "Javascript", "Responsive"],
     },
     {
         name: "Personal portfolio website",
         desc: 'A responsive personal portfolio website developed using React.js, designed with a modern UI/UX approach to create a clean, intuitive, and engaging user experience.',
         url: "https://bastian-here-v3.vercel.app/",
-        img: "./portv3.png"
+        img: "./portv3.png",
+        tags: ["React Js", "Vite", "UI/UX"],
     },
     {
         name: "Susi Air company website",
         desc: "An airline ticket booking platform developed using Vue.js, Vuex, and Nuxt.js, featuring state management integration and optimized performance for a seamless booking experience.",
         url: "https://susiair.com/",
-        img: "./susiair.png"
+        img: "./susiair.png",
+        tags: ["Vue Js", "Nuxt Js", "Vuex"],
     },
     {
         name: "Modern Admin Dashboard",
         desc:"A modern admin dashboard developed using React.js and Chakra UI, designed with a clean and intuitive interface to provide efficient data management and seamless user experience.",
         url: "",
-        img: "./susidash.png"
+        img: "./susidash.png",
+        tags: ["React Js", "Chakra UI"],
     },
     {
         name: "Movie Ratings & Articles website",
         desc: "A movie and drama library and review platform developed using Next.js and Tailwind CSS, featuring a responsive interface and clean, modern design for an enhanced user experience.",
         url: "https://rateme-list.vercel.app/",
-        img: "./rateme.png"
+        img: "./rateme.png",
+        tags: ["Next Js", "Tailwind CSS"],
     }
 ]

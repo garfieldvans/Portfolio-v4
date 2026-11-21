@@ -1,7 +1,77 @@
-@import '@fontsource/poppins/400.css';
-@import '@fontsource/poppins/500.css';
-@import '@fontsource/poppins/600.css';
-@import '@fontsource/poppins/700.css';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/space-grotesk';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink text-cream font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background-color: #c8ff4d;
+    color: #0a0a0a;
+  }
+}
+
+/* Scroll reveal: transform/opacity only, driven by IntersectionObserver */
+html.reveal-ready [data-reveal] {
+  opacity: 0;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+html.reveal-ready [data-reveal]:not(.is-revealed) {
+  transform: translateY(18px);
+  will-change: opacity, transform;
+}
+
+html.reveal-ready [data-reveal].is-revealed {
+  opacity: 1;
+  transition:
+    opacity 0.4s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  transition-delay: 0ms;
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.reveal-ready [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-[#d8ff7a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line px-5 py-3 text-sm font-semibold text-cream transition-colors hover:border-cream/40 hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent;
+  }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.2em] text-muted;
+  }
+}

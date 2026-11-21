@@ -1,75 +1,96 @@
-import React from "react";
-import Lottie from "react-lottie";
-import animationData from "../../utils/coding-work.json";
+import PropTypes from "prop-types";
+import SectionHeading from "../../components/SectionHeading/SectionHeading";
 import { workExp } from "../../utils/data";
-import { SiPaperspace } from "react-icons/si";
-import { IoIosArrowDropright } from "react-icons/io";
-import styles from "./work.module.css";
-import { MdWorkHistory } from "react-icons/md";
 
 const Work = ({ sectionID }) => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
   return (
-    <div className=" flex flex-col lg:px-40 pt-2 sm:px-10 px-4 text-white pb-20 " id={`${sectionID}`}>
-      <div className="section-header">
-        <div className="h-px bg-slate-200/25 w-full" />
-        <h2 className="font-bold text-xl md:text-3xl text-center animate-fade-up flex gap-3">
-          Experiences
-        </h2>
-        <div className="h-px bg-slate-200/25 w-full" />
-      </div>
-      <div className="flex sm:flex-row flex-col sm:gap-2 gap-6 mt-3 justify-between">
-        <div className="w-40 h-40 lg:h-80 md:w-60 aspect-square lg:w-80 md:w-60">
-          <Lottie options={defaultOptions} />
-        </div>
-        <div className="max-w-2xl sm:min-w-72 lg:w-full min-h-40 p-4 text-base lg:text-base flex flex-col gap-6 ease-in-out animate-fade-up animate-once animate-delay-200">
-          {workExp.map((work, i) => {
-            return (
-              <div
-                key={i}
-                className={` shadow-sm shadow-indigo-500 hover:shadow-none lg:px-10 p-2 border-2 border-indigo-200/25 rounded-lg hover:border-rose-500 hover:animate-wiggle`}
-              >
-                <h1 className="font-bold">{work.tenure}</h1>
-                <div className="flex gap-10 mt-2 text-3xl items-center">
-                  <div className="flex w-10 aspect-square items-center justify-center">
-                    <MdWorkHistory className="text-rose-500 " size={30} />
-                  </div>
-                  <div className="text-sm md:text-lg">
-                    <h1 className=" font-bold">{work.place}</h1>
-                    <h1 >{work.role}</h1>
-                  </div>
-                </div>
-                <div className={styles["wrapper-square"]}>
-                  <span className={styles["square-header"]}>Desc:</span>
-                  <div className={styles["detail-list"]}>
-                    <ul className={styles["square-list-container"]}>
-                      {work.detail.slice(0, 3).map((detail, i) => {
-                        return (
-                          <li key={i} className="flex gap-2 items-start">
-                            <div>
-                              <IoIosArrowDropright className="text-rose-500 flex max-w-10" size={20} />
-                            </div>
-                            <span>{detail}</span>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                </div>
+    <section
+      id={sectionID}
+      className="scroll-mt-20 border-t border-line py-20 sm:py-28"
+    >
+      <SectionHeading
+        index="02"
+        label="Experience"
+        title={
+          <>
+            Shipping real products,{" "}
+            <span className="text-accent">not just code.</span>
+          </>
+        }
+        description="From e-commerce storefronts to internal finance applications — here is where I've spent the last few years."
+      />
+
+      <ol className="border-t border-line">
+        {workExp.map((work, i) => {
+          const isCurrent = work.tenure.toLowerCase().includes("present");
+
+          return (
+            <li
+              key={`${work.place}-${work.tenure}`}
+              className="grid gap-3 border-b border-line py-8 sm:grid-cols-[150px_1fr] sm:gap-8 sm:py-10"
+              data-reveal
+              style={{ "--reveal-delay": `${Math.min(i, 4) * 60}ms` }}
+            >
+              <div>
+                <p className="font-mono text-[10px] uppercase leading-relaxed tracking-[0.14em] text-muted">
+                  {work.tenure}
+                </p>
+                {isCurrent && (
+                  <span className="mt-2 inline-flex items-center gap-1.5 font-mono text-[9px] uppercase tracking-[0.14em] text-accent">
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                    Current
+                  </span>
+                )}
               </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
+
+              <div>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-display text-xl font-semibold leading-snug tracking-tight sm:text-2xl">
+                      {work.place}
+                    </h3>
+                    <p className="mt-1 text-sm text-accent/90">{work.role}</p>
+                  </div>
+                  <span className="hidden font-mono text-[10px] text-muted sm:block">
+                    0{i + 1}
+                  </span>
+                </div>
+
+                <ul className="mt-5 space-y-2.5">
+                  {work.detail.map((detail, index) => (
+                    <li
+                      key={index}
+                      className="flex gap-3 text-sm leading-relaxed text-muted"
+                    >
+                      <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-accent/70" />
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {work.stack && (
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {work.stack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-full border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.08em] text-cream/70"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
   );
+};
+
+Work.propTypes = {
+  sectionID: PropTypes.string.isRequired,
 };
 
 export default Work;

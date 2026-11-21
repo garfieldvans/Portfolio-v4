@@ -1,34 +1,36 @@
 import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 
-const DEFAULT_BTN_CLS =
-  "fixed bottom-8 right-6 z-50 flex items-center rounded-full bg-gradient-to-r from-pink-500 to-violet-600 p-4 hover:text-xl transition-all duration-300 ease-out opacity-0"; // tambahkan opacity-0 untuk animasi muncul
-const SCROLL_THRESHOLD = 50;
+const SCROLL_THRESHOLD = 400;
 
 const ScrollToTop = () => {
-  const [btnCls, setBtnCls] = useState(DEFAULT_BTN_CLS);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > SCROLL_THRESHOLD && btnCls.includes("opacity-0")) { // periksa opacity-0
-        setBtnCls(DEFAULT_BTN_CLS.replace(" opacity-0", ""));
-      } else if (window.scrollY <= SCROLL_THRESHOLD && !btnCls.includes("opacity-0")) { // tambahkan !btnCls.includes("opacity-0")
-        setBtnCls(DEFAULT_BTN_CLS + " opacity-0"); // tambahkan opacity-0 saat menghilangkan
-      }
+      setVisible(window.scrollY > SCROLL_THRESHOLD);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll, { passive: true });
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [btnCls]); // tambahkan btnCls sebagai dependensi
+  }, []);
 
   const onClickBtn = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <button className={btnCls} onClick={onClickBtn}>
-      <FaArrowUp />
+    <button
+      onClick={onClickBtn}
+      aria-label="Scroll back to top"
+      className={`fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-line bg-ink/90 text-cream backdrop-blur transition-all duration-300 hover:border-accent hover:bg-accent hover:text-ink ${
+        visible
+          ? "translate-y-0 opacity-100"
+          : "pointer-events-none translate-y-2 opacity-0"
+      }`}
+    >
+      <FaArrowUp size={14} />
     </button>
   );
 };
