@@ -29,11 +29,14 @@ const Education = ({ sectionID }) => {
         description="I care about how things look, how they work, and how they hold up as the product grows."
       />
 
-      <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:gap-16" data-reveal>
-        <aside>
+      <div
+        className="grid gap-10 sm:grid-cols-[220px_1fr] sm:gap-8 lg:grid-cols-[280px_1fr] lg:gap-16"
+        data-reveal
+      >
+        <aside className="max-w-[280px]">
           <div className="overflow-hidden rounded-2xl border border-line bg-surface">
             <img
-              src="./profile.png"
+              src="./profile.webp"
               alt="Sebastian Paulo Haloho"
               className="aspect-square w-full object-cover grayscale transition-all duration-500 hover:grayscale-0"
             />
@@ -119,7 +122,7 @@ const Education = ({ sectionID }) => {
       </div>
 
       <div
-        className="mt-20 grid gap-10 border-t border-line pt-12 lg:grid-cols-[280px_1fr] lg:gap-16"
+        className="mt-20 grid gap-10 border-t border-line pt-12 md:grid-cols-[220px_1fr] md:gap-8 lg:grid-cols-[280px_1fr] lg:gap-16"
         data-reveal
       >
         <div>

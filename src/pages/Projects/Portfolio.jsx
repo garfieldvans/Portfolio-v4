@@ -41,6 +41,7 @@ const Portfolio = ({ sectionID }) => {
                 alt={item.name}
                 loading="lazy"
                 className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.04] group-hover:brightness-110"
+                style={i === 0 ? { objectPosition: "50% 33%" } : undefined}
               />
               {item.url && (
                 <span className="pointer-events-none absolute bottom-4 left-4 flex translate-y-1 items-center gap-1.5 rounded-full bg-ink/85 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-accent opacity-0 backdrop-blur transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
@@ -59,6 +60,11 @@ const Portfolio = ({ sectionID }) => {
                   <h3 className="mt-2 font-display text-xl font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent">
                     {item.name}
                   </h3>
+                  {item.role && (
+                    <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+                      {item.role}
+                    </p>
+                  )}
                 </div>
 
                 {item.url ? (
@@ -73,7 +79,7 @@ const Portfolio = ({ sectionID }) => {
                   </a>
                 ) : (
                   <span className="shrink-0 rounded-full border border-line px-3 py-1 font-mono text-[9px] uppercase tracking-[0.12em] text-muted">
-                    Internal
+                    {item.badge || "Case study"}
                   </span>
                 )}
               </div>

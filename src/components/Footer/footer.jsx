@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="border-t border-line bg-ink">
       <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <div
-          className="grid gap-12 lg:grid-cols-[1.6fr_1fr] lg:gap-20"
+          className="grid gap-12 md:grid-cols-[1.6fr_1fr] md:gap-10 lg:gap-20"
           data-reveal
         >
           <div>
